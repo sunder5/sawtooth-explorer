@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  sawtooth-explorer:
+    image: sawtooth-explorer
+    container_name: sawtooth-explorer
+    build: .
+    volumes:
+      - ./dist/:/usr/local/apache2/htdocs/
+    expose:
+      - 80
+    ports:
+      - '4200:80'
