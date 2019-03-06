@@ -2,7 +2,7 @@ version: '3'
 
 services:
 
-  fish-client:
+  sawtooth-explorer:
     image: sawtooth-explorer-installed
     container_name: sawtooth-explorer-installed
     build:

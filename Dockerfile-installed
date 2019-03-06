@@ -1,12 +1,22 @@
 FROM node:8 AS static_builder
 
 WORKDIR .
-COPY ./package.json .
 RUN npm install
 RUN npm run build
 
 FROM httpd:2.4
 
 COPY --from=static_builder ./dist/ /usr/local/apache2/htdocs/
+
+RUN echo "\
+\n\
+ServerName sawtooth-explorer\n\
+AddDefaultCharset utf-8\n\
+LoadModule proxy_module modules/mod_proxy.so\n\
+LoadModule proxy_http_module modules/mod_proxy_http.so\n\
+ProxyPass /transactions http://localhost:8008\n\
+ProxyPassReverse /transactions http://localhost:8008\n\
+\n\
+" >>/usr/local/apache2/conf/httpd.conf
 
 EXPOSE 80/tcp

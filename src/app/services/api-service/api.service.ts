@@ -72,7 +72,7 @@ export class APIService {
   getItems(resourceName: string, params?: object): Observable<object[]> {
     let options: object = _.defaults(params, this.pagingDefaults);
     let min = options['pageIndex'] * options['pageSize'];
-    let url = this.apiURL + '/' + resourceName + '?min=' + min +
+    let url = '/' + resourceName + '?min=' + min +
       '&count=' + options['pageSize'];
 
     return this.http.get(url)
@@ -89,7 +89,7 @@ export class APIService {
    * @return {Observable} - observable watching the results of the API request
    */
   getItemByID(resourceName: string, id: string): Observable<object> {
-    return this.http.get(this.apiURL + '/' + resourceName + '/' + id)
+    return this.http.get('/' + resourceName + '/' + id)
       .timeout(this.apiTimeout)
       .map(response => response.json().data as object)
       .catch(err => Observable.throw(err));
