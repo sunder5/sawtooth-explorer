@@ -1,24 +1,24 @@
 {
   "/api/v1/*": {
-    "target": "http://54.208.83.95:8008",
+    "target": "http://54.208.83.95:8018",
     "secure": false,
     "logLevel": "debug",
     "changeOrigin": true
   },
   "/blocks/*": {
-    "target": "http://54.208.83.95:8008",
+    "target": "http://54.208.83.95:8018",
     "secure": false,
     "logLevel": "debug",
     "changeOrigin": true
   },
   "/batches/*": {
-    "target": "http://54.208.83.95:8008",
+    "target": "http://54.208.83.95:8018",
     "secure": false,
     "logLevel": "debug",
     "changeOrigin": true
   },
   "/transactions/*": {
-    "target": "http://54.208.83.95:8008",
+    "target": "http://54.208.83.95:8018",
     "secure": false,
     "logLevel": "debug",
     "changeOrigin": true

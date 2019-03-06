@@ -5,7 +5,7 @@ const PROXY_CONFIG = [
             "/batches/*",
             "/blocks/*"
         ],
-        target: "http://54.208.83.95:8008",
+        target: "http://54.208.83.95:8018",
         secure: false,
         changeOrigin: true
     }
