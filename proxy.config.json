@@ -16,5 +16,11 @@
     "secure": false,
     "logLevel": "debug",
     "changeOrigin": true
+  },
+  "/transactions/*": {
+    "target": "http://54.208.83.95:8008",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
   }
 }
